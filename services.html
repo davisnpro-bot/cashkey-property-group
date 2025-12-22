@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - CashKey Property Group</title>
+    <meta name="description" content="CashKey Property Group buys all types of properties in any condition. We specialize in distressed homes, inherited properties, foreclosure prevention, and more.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest': '#1B4332',
+                        'gold': '#D4A574',
+                        'cream': '#F8F6F0',
+                        'charcoal': '#2D3748'
+                    },
+                    fontFamily: {
+                        'display': ['Georgia', 'serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .service-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,246,240,0.9));
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="resources/logo.png" alt="CashKey Property Group" class="h-10 w-auto">
+                    <span class="ml-3 text-xl font-display font-bold text-forest">CashKey Property Group</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-medium">Home</a>
+                    <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-medium">About</a>
+                    <a href="services.html" class="text-forest hover:text-gold transition-colors font-medium">Services</a>
+                    <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-medium">Contact</a>
+                    <a href="tel:+1-555-CASH-NOW" class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium">Call Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-forest hover:text-gold">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">Home</a>
+                    <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">About</a>
+                    <a href="services.html" class="text-forest hover:text-gold transition-colors font-medium py-2">Services</a>
+                    <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">Contact</a>
+                    <a href="tel:+1-555-CASH-NOW" class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium text-center">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-forest text-white pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl font-display font-bold mb-6">Our Services</h1>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    We buy all types of properties in any condition. Whatever your situation, we have a solution that works for you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">We Specialize In</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every homeowner's situation is unique. We provide tailored solutions for various property challenges.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Distressed Properties -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">🏚️</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Distressed Properties</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Properties that need significant repairs, have code violations, or are in poor condition. We buy as-is, saving you repair costs and headaches.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Structural issues or foundation problems
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fire or water damage
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Code violations or liens
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Mold or asbestos issues
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2: Inherited Homes -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">🏠</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Inherited Properties</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Dealing with an inherited property can be overwhelming. We make the process simple, helping you sell quickly and move forward.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Probate and estate sales
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Multiple heirs coordination
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Out-of-state property owners
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Tax lien resolution
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3: Foreclosure Prevention -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">⚠️</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Foreclosure Prevention</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        If you're facing foreclosure, time is critical. We can help you sell quickly, protect your credit, and get cash to start fresh.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Stop foreclosure proceedings
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Protect your credit score
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fast closing to meet deadlines
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Cash for relocation expenses
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4: Relocation Assistance -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">🚚</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Relocation Sales</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Need to move quickly for work or personal reasons? We can help you sell fast and choose your closing date to match your timeline.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Job relocation sales
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Military relocations
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Family emergency moves
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Flexible closing dates
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5: Rental Properties -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">🏢</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Rental Property Sales</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Tired of being a landlord? We buy rental properties with or without tenants, helping you exit the rental market quickly and easily.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Properties with tenants
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Eviction assistance
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Multiple unit buildings
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Problem tenant situations
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6: Divorce Sales -->
+                <div class="service-card rounded-xl p-8 shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-5xl mb-6 text-center">💔</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4 text-center">Divorce Sales</h3>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Divorce is difficult enough without worrying about selling your home. We provide fast, fair solutions that work for both parties.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Quick property division
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Neutral third-party sale
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Fair market value offers
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Coordinate with attorneys
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Types -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Property Types We Buy</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We purchase all types of residential and commercial properties, regardless of condition or situation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Property Type 1 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏡</div>
+                    <h3 class="font-semibold text-forest mb-2">Single-Family Homes</h3>
+                    <p class="text-gray-600 text-sm">Detached houses of any size, age, or condition</p>
+                </div>
+                
+                <!-- Property Type 2 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏘️</div>
+                    <h3 class="font-semibold text-forest mb-2">Condos & Townhomes</h3>
+                    <p class="text-gray-600 text-sm">Attached dwellings and HOA properties</p>
+                </div>
+                
+                <!-- Property Type 3 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h3 class="font-semibold text-forest mb-2">Multi-Unit Properties</h3>
+                    <p class="text-gray-600 text-sm">Duplexes, triplexes, and small apartment buildings</p>
+                </div>
+                
+                <!-- Property Type 4 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏪</div>
+                    <h3 class="font-semibold text-forest mb-2">Commercial Properties</h3>
+                    <p class="text-gray-600 text-sm">Retail spaces, offices, and mixed-use buildings</p>
+                </div>
+                
+                <!-- Property Type 5 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="font-semibold text-forest mb-2">Mobile Homes</h3>
+                    <p class="text-gray-600 text-sm">Manufactured homes with or without land</p>
+                </div>
+                
+                <!-- Property Type 6 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏰</div>
+                    <h3 class="font-semibold text-forest mb-2">Luxury Homes</h3>
+                    <p class="text-gray-600 text-sm">High-end properties in premium locations</p>
+                </div>
+                
+                <!-- Property Type 7 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🏗️</div>
+                    <h3 class="font-semibold text-forest mb-2">Vacant Land</h3>
+                    <p class="text-gray-600 text-sm">Residential and commercial lots</p>
+                </div>
+                
+                <!-- Property Type 8 -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg hover-lift reveal-on-scroll">
+                    <div class="text-4xl mb-4">🔨</div>
+                    <h3 class="font-semibold text-forest mb-2">Fixer-Uppers</h3>
+                    <p class="text-gray-600 text-sm">Properties needing complete renovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Comparison -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Cash Sale vs. Traditional Listing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See why selling to CashKey Property Group is often the better choice for homeowners who need to sell quickly.
+                </p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                    <thead class="bg-forest text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-semibold">Factor</th>
+                            <th class="px-6 py-4 text-left font-semibold">Cash Sale to CashKey</th>
+                            <th class="px-6 py-4 text-left font-semibold">Traditional Listing</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Time to Close</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">7-14 days</td>
+                            <td class="px-6 py-4 text-gray-600">30-90 days</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Repairs Needed</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">None - We buy as-is</td>
+                            <td class="px-6 py-4 text-gray-600">Often required</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Commissions</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">Zero</td>
+                            <td class="px-6 py-4 text-gray-600">5-6% of sale price</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Closing Costs</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">We cover all costs</td>
+                            <td class="px-6 py-4 text-gray-600">2-4% of sale price</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Showings/Open Houses</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">None</td>
+                            <td class="px-6 py-4 text-gray-600">Multiple required</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Financing Contingencies</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">None - Cash purchase</td>
+                            <td class="px-6 py-4 text-gray-600">Common delays</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Certainty of Sale</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">Guaranteed</td>
+                            <td class="px-6 py-4 text-gray-600">Can fall through</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-forest">Net Proceeds</td>
+                            <td class="px-6 py-4 text-green-600 font-semibold">Offer amount (no deductions)</td>
+                            <td class="px-6 py-4 text-gray-600">Minus commissions & costs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600">
+                    Real homeowners, real solutions. See how we've helped people in various situations.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Success Story 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg reveal-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-forest rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-forest">Robert & Maria</h4>
+                            <p class="text-gray-600 text-sm">Inherited Property</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "We inherited my mother's house in another state and didn't know what to do. It needed a lot of work, and we couldn't afford to fix it up. CashKey bought it as-is and closed in 10 days. They made a difficult situation so much easier."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gold font-semibold">Sold in 10 days</span>
+                        <span class="text-sm text-gray-500">Phoenix, AZ</span>
+                    </div>
+                </div>
+                
+                <!-- Success Story 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg reveal-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-forest">Jennifer K.</h4>
+                            <p class="text-gray-600 text-sm">Foreclosure Prevention</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "I lost my job and was 3 months behind on mortgage payments. CashKey worked with me and my bank to stop the foreclosure. They bought my house and even gave me extra time to move out. I can't thank them enough for helping me through that tough time."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gold font-semibold">Foreclosure stopped</span>
+                        <span class="text-sm text-gray-500">Dallas, TX</span>
+                    </div>
+                </div>
+                
+                <!-- Success Story 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg reveal-on-scroll">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-forest rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-forest">Mike T.</h4>
+                            <p class="text-gray-600 text-sm">Distressed Property</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "My rental property was trashed by the last tenants. I was looking at $30,000 in repairs just to make it rentable again. CashKey bought it as-is for a fair price, and I didn't have to deal with contractors or repairs."
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gold font-semibold">No repairs needed</span>
+                        <span class="text-sm text-gray-500">Orlando, FL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-forest text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-display font-bold mb-6">Ready to Sell Your Property?</h2>
+            <p class="text-xl mb-8 text-gray-100">
+                Whatever your situation, we have a solution. Get your no-obligation cash offer today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#lead-form" class="bg-gold text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105">
+                    Get My Cash Offer
+                </a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-forest transition-all">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="resources/logo.png" alt="CashKey Property Group" class="h-8 w-auto mr-3">
+                        <span class="text-lg font-display font-bold">CashKey Property Group</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        We buy houses for cash nationwide. Get a fair offer and close on your timeline. No repairs, no fees, no hassle.
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="text-gold">⭐⭐⭐⭐⭐</span>
+                        <span class="text-gray-300">4.9/5 Rating</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Our Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                        <li><a href="#" onclick="showComingSoon()" class="hover:text-gold transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📞 (555) 227-4669</li>
+                        <li>✉️ info@cashkeyproperties.com</li>
+                        <li>🏢 Nationwide Service</li>
+                        <li>🕒 24/7 Available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 CashKey Property Group. All rights reserved. | Licensed Real Estate Investment Company</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+</body>
+</html>

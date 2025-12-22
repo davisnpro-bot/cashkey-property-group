@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashKey Property Group - Sell Your House Fast for Cash</title>
+    <meta name="description" content="Sell your house fast for cash to CashKey Property Group. We buy houses in any condition, no repairs needed. Get a fair cash offer within 24 hours.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest': '#1B4332',
+                        'gold': '#D4A574',
+                        'cream': '#F8F6F0',
+                        'charcoal': '#2D3748'
+                    },
+                    fontFamily: {
+                        'display': ['Georgia', 'serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.7), rgba(212, 165, 116, 0.3)), url('resources/hero-home.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1B4332, #D4A574);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="resources/logo.png" alt="CashKey Property Group" class="h-10 w-auto">
+                    <span class="ml-3 text-xl font-display font-bold text-forest">CashKey Property Group</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-forest hover:text-gold transition-colors font-medium">Home</a>
+                    <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-medium">About</a>
+                    <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-medium">Services</a>
+                    <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-medium">Contact</a>
+                    <a href="tel:+1-555-CASH-NOW" class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium">Call Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-forest hover:text-gold">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-forest hover:text-gold transition-colors font-medium py-2">Home</a>
+                    <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">About</a>
+                    <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">Services</a>
+                    <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-medium py-2">Contact</a>
+                    <a href="tel:+1-555-CASH-NOW" class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium text-center">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-white">
+                    <h1 class="text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+                        <span id="hero-headline">Sell Your House Fast for Cash</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-100 leading-relaxed">
+                        Get a fair cash offer for your home in 24 hours. No repairs, no fees, no hassle. We buy houses in any condition, and we close on your timeline.
+                    </p>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap gap-6 mb-8 text-sm">
+                        <div class="flex items-center">
+                            <span class="text-gold mr-2">⭐⭐⭐⭐⭐</span>
+                            <span>4.9/5 Rating</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-gold mr-2">🏆</span>
+                            <span>A+ BBB Rating</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-gold mr-2">⚡</span>
+                            <span>24-Hour Offers</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Primary CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})" 
+                                class="bg-gold text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105 animate-pulse-slow">
+                            Get My Cash Offer
+                        </button>
+                        <button onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})" 
+                                class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-forest transition-all">
+                            Calculate Offer
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Quick Lead Capture Form -->
+                <div class="bg-white rounded-xl shadow-2xl p-8">
+                    <h3 class="text-2xl font-display font-bold text-forest mb-6 text-center">Get Your Cash Offer</h3>
+                    <form id="lead-capture-form" class="space-y-6">
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+                            <div class="progress-fill bg-gold h-2 rounded-full" style="width: 33%"></div>
+                        </div>
+                        
+                        <!-- Step 1: Basic Info -->
+                        <div id="step-1">
+                            <h4 class="text-lg font-semibold text-charcoal mb-4">Property Address</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="text" id="address" name="address" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="Street Address">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" id="city" name="city" required 
+                                           class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="City">
+                                    <input type="text" id="zip" name="zip" required 
+                                           class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="ZIP Code">
+                                </div>
+                                <button type="button" onclick="nextStep()" 
+                                        class="w-full bg-forest text-white py-3 rounded-lg hover:bg-green-800 transition-colors font-semibold">
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Property Details -->
+                        <div id="step-2" class="hidden">
+                            <h4 class="text-lg font-semibold text-charcoal mb-4">Tell Us About Your Property</h4>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>
+                                        <select id="property-bedrooms" name="bedrooms" required 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                            <option value="">Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5+">5+</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Bathrooms</label>
+                                        <select id="property-bathrooms" name="bathrooms" required 
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                            <option value="">Select</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4+">4+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Approximate Square Footage</label>
+                                    <input type="number" id="sqft" name="sqft" 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="e.g., 1500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Property Condition</label>
+                                    <select id="property-condition" name="condition" required 
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                        <option value="">Select Condition</option>
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="poor">Poor</option>
+                                        <option value="distressed">Distressed</option>
+                                    </select>
+                                </div>
+                                <div class="flex gap-4">
+                                    <button type="button" onclick="prevStep()" 
+                                            class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-400 transition-colors">
+                                        Back
+                                    </button>
+                                    <button type="button" onclick="nextStep()" 
+                                            class="flex-1 bg-forest text-white py-3 rounded-lg hover:bg-green-800 transition-colors">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Contact Info -->
+                        <div id="step-3" class="hidden">
+                            <h4 class="text-lg font-semibold text-charcoal mb-4">Contact Information</h4>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" id="firstName" name="firstName" required 
+                                           class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="First Name">
+                                    <input type="text" id="lastName" name="lastName" required 
+                                           class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                           placeholder="Last Name">
+                                </div>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                       placeholder="Email Address">
+                                <input type="tel" id="phone" name="phone" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                                       placeholder="Phone Number">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Reason for Selling</label>
+                                    <select id="selling-reason" name="sellingReason" 
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                                        <option value="">Select Reason</option>
+                                        <option value="relocation">Relocation</option>
+                                        <option value="financial">Financial Difficulties</option>
+                                        <option value="inherited">Inherited Property</option>
+                                        <option value="divorce">Divorce</option>
+                                        <option value="distressed">Distressed Property</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="flex gap-4">
+                                    <button type="button" onclick="prevStep()" 
+                                            class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-400 transition-colors">
+                                        Back
+                                    </button>
+                                    <button type="submit" 
+                                            class="flex-1 bg-gold text-white py-3 rounded-lg hover:bg-yellow-600 transition-colors font-semibold">
+                                        Get My Cash Offer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <p class="text-xs text-gray-500 text-center mt-4">
+                        No obligation to accept. We respect your privacy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Why Choose CashKey Property Group?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We understand that selling your home can be stressful. That's why we've simplified the process to make it fast, fair, and hassle-free.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="text-center hover-lift bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold text-forest mb-3">Fast Process</h3>
+                    <p class="text-gray-600">Get your cash offer within 24 hours and close in as little as 7 days.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="text-center hover-lift bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-xl font-semibold text-forest mb-3">Any Condition</h3>
+                    <p class="text-gray-600">We buy houses as-is, no repairs or cleaning needed. Save time and money.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="text-center hover-lift bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-semibold text-forest mb-3">No Fees</h3>
+                    <p class="text-gray-600">No commissions, no closing costs, no hidden fees. The offer you see is what you get.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="text-center hover-lift bg-white p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-semibold text-forest mb-3">Guaranteed Sale</h3>
+                    <p class="text-gray-600">No financing contingencies. We pay cash and can close on your schedule.</p>
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16 text-center">
+                <div class="reveal-on-scroll">
+                    <div class="text-4xl font-bold text-gold mb-2">
+                        <span class="counter" data-target="500">0</span>+
+                    </div>
+                    <p class="text-gray-600">Homes Purchased</p>
+                </div>
+                <div class="reveal-on-scroll">
+                    <div class="text-4xl font-bold text-gold mb-2">
+                        <span class="counter" data-target="15">0</span>+
+                    </div>
+                    <p class="text-gray-600">Years Experience</p>
+                </div>
+                <div class="reveal-on-scroll">
+                    <div class="text-4xl font-bold text-gold mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <p class="text-gray-600">Customer Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Our Simple 3-Step Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We've made selling your home as easy as possible. Here's how it works:
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center reveal-on-scroll">
+                    <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4">Contact Us</h3>
+                    <p class="text-gray-600 mb-6">Fill out our simple form or give us a call. We'll gather some basic information about your property.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600">⏱️ Takes less than 2 minutes</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center reveal-on-scroll">
+                    <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4">Get Your Offer</h3>
+                    <p class="text-gray-600 mb-6">We'll evaluate your property and present you with a fair, no-obligation cash offer within 24 hours.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600">💰 Fair market-based offer</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center reveal-on-scroll">
+                    <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-2xl font-semibold text-forest mb-4">Close & Get Paid</h3>
+                    <p class="text-gray-600 mb-6">Choose your closing date and get paid. We handle all the paperwork and cover closing costs.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600">🏆 Close in 7-14 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Calculator -->
+    <section id="calculator" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Get Your Instant Offer Estimate</h2>
+                <p class="text-xl text-gray-600">
+                    Use our calculator to get an estimated cash offer for your property.
+                </p>
+            </div>
+            
+            <div id="property-calculator" class="bg-white rounded-xl shadow-2xl p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Square Footage</label>
+                            <input type="range" id="sqft" name="sqft" min="500" max="5000" value="1500" step="100"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>500</span>
+                                <span id="sqft-value">1500</span>
+                                <span>5000+</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
+                            <input type="range" id="bedrooms" name="bedrooms" min="1" max="5" value="3" step="1"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>1</span>
+                                <span id="bedrooms-value">3</span>
+                                <span>5+</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Bathrooms</label>
+                            <input type="range" id="bathrooms" name="bathrooms" min="1" max="4" value="2" step="0.5"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>1</span>
+                                <span id="bathrooms-value">2</span>
+                                <span>4+</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Property Condition</label>
+                            <input type="range" id="condition" name="condition" min="1" max="5" value="3" step="1"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Poor</span>
+                                <span id="condition-value">Fair</span>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calculator Result -->
+                    <div class="calculation-result">
+                        <!-- Result will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-gold text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-colors">
+                        Get Exact Cash Offer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600">
+                    Don't just take our word for it. Here's what real homeowners say about working with CashKey.
+                </p>
+            </div>
+            
+            <div id="testimonial-carousel" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- Testimonial 1 -->
+                        <li class="splide__slide">
+                            <div class="bg-cream rounded-xl p-8 mx-4">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-forest rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                        S
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-forest">Sarah Johnson</h4>
+                                        <p class="text-gray-600">Sold her home in Dallas, TX</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "I inherited my grandmother's house and didn't know what to do with it. It needed a lot of work, and I live out of state. CashKey made me a fair offer within 24 hours and handled everything. I had cash in hand in just 10 days!"
+                                </p>
+                                <div class="text-gold text-xl">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </li>
+                        
+                        <!-- Testimonial 2 -->
+                        <li class="splide__slide">
+                            <div class="bg-cream rounded-xl p-8 mx-4">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-forest rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                        M
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-forest">Michael Rodriguez</h4>
+                                        <p class="text-gray-600">Sold his rental property in Phoenix, AZ</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "After being a landlord for 15 years, I was ready to retire. My rental needed major repairs, and I didn't want to deal with contractors. CashKey bought it as-is and even helped with the tenant transition. Highly recommend!"
+                                </p>
+                                <div class="text-gold text-xl">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </li>
+                        
+                        <!-- Testimonial 3 -->
+                        <li class="splide__slide">
+                            <div class="bg-cream rounded-xl p-8 mx-4">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-forest rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                                        L
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-forest">Lisa Chen</h4>
+                                        <p class="text-gray-600">Sold her home in San Diego, CA</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "I needed to relocate quickly for work and didn't have time for showings and repairs. CashKey gave me a competitive offer and let me choose my closing date. The whole process was smooth and professional."
+                                </p>
+                                <div class="text-gold text-xl">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-forest mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">
+                    Get answers to common questions about selling your home for cash.
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-forest">How quickly can I get a cash offer?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                        <p>We can provide you with a preliminary cash offer within 24 hours of receiving your property information. After a brief property evaluation, we'll present you with a final, no-obligation cash offer.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-forest">Do you buy houses in any condition?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                        <p>Yes! We buy houses in any condition - from move-in ready to distressed properties that need major repairs. You don't need to make any repairs or even clean the house. We handle everything after purchase.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-forest">Are there any fees or commissions?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                        <p>No! There are absolutely no fees, commissions, or hidden costs when you sell to CashKey. We cover all closing costs, and the offer we present is the amount you'll receive at closing.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-forest">How do you determine your offer price?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                        <p>Our offers are based on several factors including your property's location, condition, size, and current market values. We also consider repair costs and our profit margin. We aim to provide fair, competitive offers that work for both parties.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-forest">What if I'm facing foreclosure?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                        <p>We can often help stop foreclosure by purchasing your home quickly. Time is critical in these situations, so contact us immediately. We've helped many homeowners avoid foreclosure and protect their credit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-forest text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-display font-bold mb-6">Ready to Sell Your House for Cash?</h2>
+            <p class="text-xl mb-8 text-gray-100">
+                Get your no-obligation cash offer in 24 hours. Contact us today and see how easy selling your home can be.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-gold text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105">
+                    Get My Cash Offer
+                </button>
+                <a href="tel:+1-555-CASH-NOW" 
+                   class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-forest transition-all">
+                    Call (555) 227-4669
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="resources/logo.png" alt="CashKey Property Group" class="h-8 w-auto mr-3">
+                        <span class="text-lg font-display font-bold">CashKey Property Group</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        We buy houses for cash nationwide. Get a fair offer and close on your timeline. No repairs, no fees, no hassle.
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="text-gold">⭐⭐⭐⭐⭐</span>
+                        <span class="text-gray-300">4.9/5 Rating</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Our Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                        <li><a href="#" onclick="showComingSoon()" class="hover:text-gold transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📞 (555) 227-4669</li>
+                        <li>✉️ info@cashkeyproperties.com</li>
+                        <li>🏢 Nationwide Service</li>
+                        <li>🕒 24/7 Available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 CashKey Property Group. All rights reserved. | Licensed Real Estate Investment Company</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+    
+    <!-- FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('svg');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Update calculator display values
+        document.getElementById('sqft').addEventListener('input', function() {
+            document.getElementById('sqft-value').textContent = this.value;
+        });
+        
+        document.getElementById('bedrooms').addEventListener('input', function() {
+            document.getElementById('bedrooms-value').textContent = this.value;
+        });
+        
+        document.getElementById('bathrooms').addEventListener('input', function() {
+            document.getElementById('bathrooms-value').textContent = this.value;
+        });
+        
+        document.getElementById('condition').addEventListener('input', function() {
+            const conditions = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            document.getElementById('condition-value').textContent = conditions[this.value - 1];
+        });
+    </script>
+</body>
+</html>
