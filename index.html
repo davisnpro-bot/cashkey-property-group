@@ -58,7 +58,44 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-    </style>
+    
+        /* CashKey polish pack: typography + buttons + hover */
+        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
+        h4, h5, h6 { line-height: 1.2; }
+        p { line-height: 1.65; }
+
+        /* Button system */
+        .ck-btn{
+            display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+            padding:.75rem 1.25rem !important;
+            border-radius:.75rem !important;
+            font-weight:600 !important;
+            transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+            border: 1px solid transparent;
+            text-decoration:none;
+        }
+        .ck-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+        .ck-btn:active{ transform: translateY(0px); box-shadow: 0 6px 16px rgba(0,0,0,.10); }
+
+        .ck-btn-primary{ background: #D4A574 !important; color: #ffffff !important; }
+        .ck-btn-primary:hover{ background: #C89557 !important; }
+
+        .ck-btn-secondary{ background: transparent !important; color: #ffffff !important; border-color:#ffffff !important; }
+        .ck-btn-secondary:hover{ background: #ffffff !important; color: #1B4332 !important; }
+
+        /* Card hover polish */
+        .ck-card{ transition: transform .18s ease, box-shadow .18s ease; }
+        .ck-card:hover{ transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.10); }
+
+        /* Process helper boxes: center text and keep equal height */
+        .ck-helper{
+            display:flex; align-items:center; justify-content:center;
+            min-height: 64px;
+        }
+        .ck-helper p{ margin:0 !important; }
+
+</style>
 </head>
 <body class="bg-white text-charcoal">
 <!-- Navigation -->
@@ -76,7 +113,7 @@
 <a class="text-charcoal hover:text-gold transition-colors font-medium" href="about.html">About</a>
 <a class="text-charcoal hover:text-gold transition-colors font-medium" href="services.html">Services</a>
 <a class="text-charcoal hover:text-gold transition-colors font-medium" href="contact.html">Contact</a>
-<a class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium" href="tel:18002014223">Call Us</a>
+<a href="tel:18002014223" class="ck-btn ck-btn-primary">Call Us</a>
 </div>
 <!-- Mobile Menu Button -->
 <div class="md:hidden">
@@ -94,7 +131,7 @@
 <a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="about.html">About</a>
 <a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="services.html">Services</a>
 <a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="contact.html">Contact</a>
-<a class="bg-gold text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors font-medium text-center" href="tel:18002014223">Call Us</a>
+<a href="tel:18002014223" class="ck-btn ck-btn-primary">Call Us</a>
 </div>
 </div>
 </div>
@@ -325,7 +362,7 @@
 <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
 <h3 class="text-2xl font-semibold text-forest mb-4">Contact Us</h3>
 <p class="text-gray-600 mb-6">Fill out our simple form or give us a call. We'll gather some basic information about your property.</p>
-<div class="bg-gray-100 p-4 rounded-lg">
+<div class="bg-gray-100 p-4 rounded-lg ck-helper">
 <p class="text-sm text-gray-600">⏱️ Takes less than 2 minutes</p>
 </div>
 </div>
@@ -334,7 +371,7 @@
 <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
 <h3 class="text-2xl font-semibold text-forest mb-4">Get Your Offer</h3>
 <p class="text-gray-600 mb-6">We'll evaluate your property and present you with a fair, no-obligation cash offer within 24 hours.</p>
-<div class="bg-gray-100 p-4 rounded-lg">
+<div class="bg-gray-100 p-4 rounded-lg ck-helper">
 <p class="text-sm text-gray-600">💰 Fair market-based offer</p>
 </div>
 </div>
@@ -343,7 +380,7 @@
 <div class="bg-forest text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
 <h3 class="text-2xl font-semibold text-forest mb-4">Close &amp; Get Paid</h3>
 <p class="text-gray-600 mb-6">Choose your closing date and get paid. We handle all the paperwork and cover closing costs.</p>
-<div class="bg-gray-100 p-4 rounded-lg">
+<div class="bg-gray-100 p-4 rounded-lg ck-helper">
 <p class="text-sm text-gray-600">🏆 Close in 7-14 days</p>
 </div>
 </div>
@@ -499,7 +536,7 @@
 <button class="bg-gold text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105" onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})">
                     Get My Cash Offer
                 </button>
-<a class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-forest transition-all" href="tel:18002014223">Call Us</a>
+<a href="tel:18002014223" class="ck-btn ck-btn-secondary">Call Us</a>
 </div>
 </div>
 </section>
