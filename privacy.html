@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.ico">
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | CashKey Property Group</title>
+<meta name="description" content="Privacy Policy for CashKey Property Group."/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Animation Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<!-- Custom Tailwind Config -->
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest': '#1B4332',
+                        'gold': '#D4A574',
+                        'cream': '#F8F6F0',
+                        'charcoal': '#2D3748'
+                    },
+                    fontFamily: {
+                        'display': ['Georgia', 'serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.7), rgba(212, 165, 116, 0.3)), url('resources/hero-home.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1B4332, #D4A574);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    
+        /* CashKey polish pack: typography + buttons + hover */
+        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
+        h4, h5, h6 { line-height: 1.2; }
+        p { line-height: 1.65; }
+
+        /* Button system */
+        .ck-btn{
+            display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+            padding:.75rem 1.25rem !important;
+            border-radius:.75rem !important;
+            font-weight:600 !important;
+            transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+            border: 1px solid transparent;
+            text-decoration:none;
+        }
+        .ck-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+        .ck-btn:active{ transform: translateY(0px); box-shadow: 0 6px 16px rgba(0,0,0,.10); }
+
+        .ck-btn-primary{ background: #D4A574 !important; color: #ffffff !important; }
+        .ck-btn-primary:hover{ background: #C89557 !important; }
+
+        .ck-btn-secondary{ background: transparent !important; color: #ffffff !important; border-color:#ffffff !important; }
+        .ck-btn-secondary:hover{ background: #ffffff !important; color: #1B4332 !important; }
+
+        /* Card hover polish */
+        .ck-card{ transition: transform .18s ease, box-shadow .18s ease; }
+        .ck-card:hover{ transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.10); }
+
+        /* Process helper boxes: center text and keep equal height */
+        .ck-helper{
+            display:flex; align-items:center; justify-content:center;
+            min-height: 64px;
+        }
+        .ck-helper p{ margin:0 !important; }
+
+</style>
+</head>
+<body class="bg-white text-charcoal">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<!-- Logo -->
+<div class="flex items-center">
+<img alt="CashKey Property Group" class="h-10 w-auto" src="resources/logo.png"/>
+<span class="ml-3 text-xl font-display font-bold text-forest">CashKey Property Group</span>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-charcoal hover:text-gold transition-colors font-medium" href="index.html">Home</a>
+<a class="text-forest hover:text-gold transition-colors font-medium" href="about.html">About</a>
+<a class="text-charcoal hover:text-gold transition-colors font-medium" href="services.html">Services</a>
+<a class="text-charcoal hover:text-gold transition-colors font-medium" href="contact.html">Contact</a>
+<a href="tel:18666655455" class="ck-btn ck-btn-primary">Call Us</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button class="text-forest hover:text-gold" id="mobile-menu-button">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden pb-4" id="mobile-menu">
+<div class="flex flex-col space-y-2">
+<a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="index.html">Home</a>
+<a class="text-forest hover:text-gold transition-colors font-medium py-2" href="about.html">About</a>
+<a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="services.html">Services</a>
+<a class="text-charcoal hover:text-gold transition-colors font-medium py-2" href="contact.html">Contact</a>
+<a href="tel:18666655455" class="ck-btn ck-btn-primary">Call Us</a>
+</div>
+</div>
+</div>
+</nav>
+
+<main class="pt-24 pb-16 bg-cream">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <h1 class="text-4xl font-display font-bold text-forest mb-2">Privacy Policy</h1>
+      <p class="text-gray-600 mb-8"><strong>Last Updated:</strong> January 2026</p>
+
+      <p class="text-gray-700 mb-6">CashKey Property Group (“CashKey,” “we,” “us,” or “our”) values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information you provide when visiting our website or communicating with us.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Information We Collect</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Name</li>
+        <li>Phone number</li>
+        <li>Email address</li>
+        <li>Property address or details</li>
+        <li>Information submitted through forms or communications</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">How We Use Your Information</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Respond to inquiries and requests</li>
+        <li>Provide cash offers or real estate-related services</li>
+        <li>Communicate with you about your request</li>
+        <li>Improve our website and services</li>
+        <li>Comply with legal or regulatory obligations</li>
+      </ul>
+      <p class="text-gray-700 mt-4">We do <strong>not</strong> sell, rent, or trade your personal information.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Text Messaging (SMS) Communications</h2>
+      <p class="text-gray-700 mb-4">If you provide your phone number, you may receive SMS or voice communications related to your inquiry, including follow-ups, appointment confirmations, or service updates.</p>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Message frequency may vary</li>
+        <li>Message and data rates may apply</li>
+        <li>You may opt out at any time by replying <strong>STOP</strong></li>
+        <li>For help, reply <strong>HELP</strong></li>
+      </ul>
+      <p class="text-gray-700 mt-4">Your consent to receive SMS messages is <strong>not</strong> a condition of purchase.</p>
+      <p class="text-gray-700 mt-4">For full SMS terms and privacy practices, please review Quo’s policy here: 
+        <a class="text-gold font-semibold hover:underline" href="https://www.quo.com/policies/OROkfK3TB3" target="_blank" rel="noopener">https://www.quo.com/policies/OROkfK3TB3</a>
+      </p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Data Protection &amp; Security</h2>
+      <p class="text-gray-700">We implement reasonable administrative, technical, and physical safeguards to protect your information. While no method of transmission is 100% secure, we strive to protect your data using industry-standard practices.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Third-Party Services</h2>
+      <p class="text-gray-700">Our website may use third-party tools such as analytics, form processors, or communication platforms to operate efficiently. These providers are only permitted to use information as necessary to perform services on our behalf.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Cookies &amp; Analytics</h2>
+      <p class="text-gray-700">We may use cookies or similar technologies to understand site usage, improve functionality, and analyze performance. You may disable cookies through your browser settings if you prefer.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Your Privacy Rights</h2>
+      <p class="text-gray-700">Depending on your location, you may request access, correction, or deletion of your information, or opt out of certain communications. To exercise these rights, contact us using the information below.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Children’s Privacy</h2>
+      <p class="text-gray-700">Our website and services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Changes to This Policy</h2>
+      <p class="text-gray-700">We may update this Privacy Policy from time to time. Any updates will be posted on this page with a revised “Last Updated” date.</p>
+
+      <h2 class="text-2xl font-semibold text-forest mt-10 mb-3">Contact Us</h2>
+      <p class="text-gray-700"><strong>CashKey Property Group</strong><br/>
+        Phone: 1-866-665-5455<br/>
+        Email: info@cashkeygroup.com
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-charcoal text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<!-- Company Info -->
+<div class="col-span-2">
+<div class="flex items-center mb-4">
+<img alt="CashKey Property Group" class="h-8 w-auto mr-3" src="resources/logo.png"/>
+<span class="text-lg font-display font-bold">CashKey Property Group</span>
+</div>
+<p class="text-gray-300 mb-4">
+                        We buy houses for cash nationwide. Get a fair offer and close on your timeline. No repairs, no fees, no hassle.</p>
+<div class="flex space-x-4">
+<span class="text-gold">⭐⭐⭐⭐⭐</span>
+<span class="text-gray-300">4.9/5 Rating</span>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-gray-300">
+<li><a class="hover:text-gold transition-colors" href="about.html">About Us</a></li>
+<li><a class="hover:text-gold transition-colors" href="services.html">Our Services</a></li>
+<li><a class="hover:text-gold transition-colors" href="contact.html">Contact</a></li>
+<li><a class="hover:text-gold transition-colors" href="privacy.html">Privacy Policy</a></li>
+<li><a class="hover:text-gold transition-colors" href="#" onclick="showComingSoon()">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="font-semibold mb-4">Contact Us</h4>
+<ul class="space-y-2 text-gray-300">
+<li>📞 <a href="tel:18666655455" class="hover:text-gold transition-colors">1-866-665-5455</a></li>
+<li>✉️ info@cashkeygroup.com</li>
+<li>🏢 Nationwide Service</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+<p>© 2025 CashKey Property Group. All rights reserved. | Licensed Real Estate Investment Company</p>
+</div>
+</div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
