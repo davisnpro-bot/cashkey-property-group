@@ -228,12 +228,20 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCalculation();
     }
     
-    // Animation initialization
-    function initAnimations() {
-        // Typewriter effect for hero headline
-        const heroHeadline = document.getElementById('hero-headline');
-        if (heroHeadline && typeof Typed !== 'undefined') {
-            new Typed('#hero-headline', {
+    // Subtle one-time hero headline animation (no typing/bounce)
+const heroHeadline = document.getElementById('hero-headline');
+if (heroHeadline) {
+    heroHeadline.classList.add('hero-fade-in');
+}
+    .hero-fade-in{
+  animation: heroFadeIn 0.7s ease-out both;
+}
+
+@keyframes heroFadeIn{
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
                 strings: [
                     'Sell Your House Fast for Cash',
                     'Get a Fair Cash Offer Today',
