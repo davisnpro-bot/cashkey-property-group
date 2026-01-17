@@ -193,77 +193,87 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         function updateCalculation() {
-            const sqft = parseInt(document.getElementById('sqft').value) || 0;
-            const bedrooms = parseInt(document.getElementById('bedrooms').value) || 0;
-            const bathrooms = parseInt(document.getElementById('bathrooms').value) || 0;
-            const condition = parseInt(document.getElementById('condition').value) || 1;
-            
-            // Simplified calculation (replace with actual algorithm)
-            const basePricePerSqft = 120;
-            let estimatedValue = sqft * basePricePerSqft;
-            
-            // Adjust for bedrooms/bathrooms
-            estimatedValue += (bedrooms * 10000) + (bathrooms * 5000);
-            
-            // Adjust for condition (1=poor, 5=excellent)
-            const conditionMultiplier = [0.6, 0.7, 0.8, 0.9, 1.0];
-            estimatedValue *= conditionMultiplier[condition - 1];
-            
-            // Cash offer is typically 70-80% of estimated value
-            const cashOffer = estimatedValue * 0.75;
-            
+            const sqftEl = document.getElementById('sqft');
+            const bedroomsEl = document.getElementById('bedrooms');
+            const bathroomsEl = document.getElementById('bathrooms');
+            const conditionEl = document.getElementById('condition');
+
+            const sqft = parseInt(sqftEl?.value, 10) || 0;
+            const bedrooms = parseInt(bedroomsEl?.value, 10) || 0;
+            const bathrooms = parseFloat(bathroomsEl?.value) || 0;
+            const condition = parseInt(conditionEl?.value, 10) || 3;
+
+            // Update UI value labels
+            const sqftValue = document.getElementById('sqft-value');
+            const bedroomsValue = document.getElementById('bedrooms-value');
+            const bathroomsValue = document.getElementById('bathrooms-value');
+            const conditionValue = document.getElementById('condition-value');
+
+            if (sqftValue) sqftValue.textContent = sqft.toLocaleString();
+            if (bedroomsValue) bedroomsValue.textContent = bedrooms.toString();
+            if (bathroomsValue) bathroomsValue.textContent = bathrooms % 1 === 0 ? bathrooms.toString() : bathrooms.toFixed(1);
+
+            const conditionLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            const conditionLabel = conditionLabels[Math.max(1, Math.min(5, condition)) - 1];
+            if (conditionValue) conditionValue.textContent = conditionLabel;
+
+            // Tuned estimator logic (simple, realistic, and easy to explain)
+            // 1) Estimate a market value baseline using a conservative price-per-sq-ft.
+            // 2) Adjust for beds/baths.
+            // 3) Apply a condition factor (repair/updatedness proxy).
+            // 4) Apply a cash-offer factor (discount for speed, convenience, risk, and closing costs).
+
+            const basePricePerSqft = 165; // baseline, conservative
+            const bedAdjustment = 8000;
+            const bathAdjustment = 7000;
+
+            let marketEstimate = (sqft * basePricePerSqft) + (bedrooms * bedAdjustment) + (bathrooms * bathAdjustment);
+
+            // Condition factor (1=poor ... 5=excellent)
+            const conditionFactor = [0.70, 0.80, 0.90, 0.97, 1.03][Math.max(1, Math.min(5, condition)) - 1];
+            marketEstimate *= conditionFactor;
+
+            // Cash offer factor (discount for speed & repairs)
+            const cashFactor = [0.68, 0.70, 0.73, 0.75, 0.77][Math.max(1, Math.min(5, condition)) - 1];
+            const cashOffer = marketEstimate * cashFactor;
+
+            // Display a small range to reflect market variability
+            const offerLow = Math.max(0, Math.round(cashOffer * 0.95));
+            const offerHigh = Math.max(0, Math.round(cashOffer * 1.05));
+
             if (resultDisplay) {
                 resultDisplay.innerHTML = `
                     <div class="text-center p-6 bg-green-50 rounded-lg">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Estimated Cash Offer</h4>
-                        <div class="text-3xl font-bold text-green-600 mb-2">$${Math.round(cashOffer).toLocaleString()}</div>
-                        <p class="text-sm text-gray-600">Based on ${sqft.toLocaleString()} sq ft, ${bedrooms} bed, ${bathrooms} bath</p>
-                        <p class="text-xs text-gray-500 mt-2">*Actual offer may vary based on location and market conditions</p>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Estimated Cash Offer Range</h4>
+                        <div class="text-3xl font-bold text-green-600 mb-2">$${offerLow.toLocaleString()} – $${offerHigh.toLocaleString()}</div>
+                        <p class="text-sm text-gray-600">Based on ${sqft.toLocaleString()} sq ft, ${bedrooms} bed, ${bathrooms % 1 === 0 ? bathrooms : bathrooms.toFixed(1)} bath • Condition: ${conditionLabel}</p>
+                        <p class="text-xs text-gray-500 mt-2">*This is an estimate only. Your exact offer depends on location, repairs, and local market conditions.</p>
                     </div>
                 `;
             }
         }
-        
+
         // Initialize calculation on page load
         updateCalculation();
     }
-    
-    // Subtle one-time hero headline animation (no typing/bounce)
-const heroHeadline = document.getElementById('hero-headline');
-if (heroHeadline) {
-    heroHeadline.classList.add('hero-fade-in');
-}
-    .hero-fade-in{
-  animation: heroFadeIn 0.7s ease-out both;
-}
 
-@keyframes heroFadeIn{
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-                strings: [
-                    'Sell Your House Fast for Cash',
-                    'Get a Fair Cash Offer Today',
-                    'Skip the Hassle, Sell to CashKey'
-                ],
-                typeSpeed: 50,
-                backSpeed: 30,
-                backDelay: 2000,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
-            });
+    // Subtle, professional animations (no typing/bounce)
+    function initAnimations() {
+        // One-time hero headline fade-in
+        const heroHeadline = document.getElementById('hero-headline');
+        if (heroHeadline) {
+            heroHeadline.classList.add('hero-fade-in');
         }
-        
-        // Animated counters
+
+        // Animated counters (start when visible)
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const increment = target / (duration / 16);
+            const target = parseInt(counter.getAttribute('data-target')) || 0;
+            const duration = 1600;
+            const steps = duration / 16;
+            const increment = target / steps;
             let current = 0;
-            
+
             const updateCounter = () => {
                 current += increment;
                 if (current < target) {
@@ -273,8 +283,7 @@ if (heroHeadline) {
                     counter.textContent = target.toLocaleString();
                 }
             };
-            
-            // Start animation when element is visible
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -282,11 +291,12 @@ if (heroHeadline) {
                         observer.unobserve(entry.target);
                     }
                 });
-            });
+            }, { threshold: 0.2 });
+
             observer.observe(counter);
         });
     }
-    
+
     // Testimonial carousel
     function initTestimonialCarousel() {
         const carousel = document.getElementById('testimonial-carousel');
@@ -413,5 +423,21 @@ style.textContent = `
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
+
+    .hero-fade-in {
+        animation: heroFadeIn 0.7s ease-out both;
+    }
+
+    @keyframes heroFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 `;
 document.head.appendChild(style);
