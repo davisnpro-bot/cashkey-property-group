@@ -43,6 +43,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
+        :root { --nav-offset: 112px; }
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -55,6 +56,10 @@
             background-position: center;
             background-attachment: fixed;
         }
+        /* Mobile browsers often struggle with fixed background attachments */
+        @media (max-width: 768px) {
+            .hero-bg { background-attachment: scroll; }
+        }
         .animate-pulse-slow {
             animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -66,7 +71,7 @@
         }
     
         /* CashKey polish pack: typography + buttons + hover */
-        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; padding-top: var(--nav-offset); }
         h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
         h4, h5, h6 { line-height: 1.2; }
         p { line-height: 1.65; }
@@ -105,7 +110,7 @@
 </head>
 <body class="bg-white text-charcoal">
 <!-- Navigation -->
-<nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+<nav id="site-nav" class="fixed top-0 w-full bg-white shadow-lg z-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center py-4">
 <!-- Logo -->
@@ -143,7 +148,7 @@
 </div>
 </nav>
 <!-- Hero Section -->
-<section class="hero-bg min-h-screen flex items-center pt-16">
+<section class="hero-bg min-h-screen flex items-center">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <!-- Hero Content -->

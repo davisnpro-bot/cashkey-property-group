@@ -3,12 +3,39 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
+    initNavOffset();
     initLeadCaptureForm();
     initPropertyCalculator();
     initAnimations();
     initTestimonialCarousel();
     initScrollEffects();
     initMobileMenu();
+
+    // Keep page content from sliding under the fixed header.
+    // Sets the CSS variable --nav-offset based on the actual nav height.
+    function initNavOffset() {
+        const nav = document.getElementById('site-nav') || document.querySelector('nav.fixed, nav.sticky');
+        if (!nav) return;
+
+        const setOffset = () => {
+            document.documentElement.style.setProperty('--nav-offset', nav.offsetHeight + 'px');
+        };
+
+        setOffset();
+        window.addEventListener('resize', setOffset);
+        window.addEventListener('orientationchange', setOffset);
+
+        // Update when nav height changes (e.g., mobile menu expands)
+        if (window.ResizeObserver) {
+            const ro = new ResizeObserver(() => setOffset());
+            ro.observe(nav);
+        }
+
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => setTimeout(setOffset, 50));
+        }
+    }
     
     // Lead capture form functionality
     function initLeadCaptureForm() {

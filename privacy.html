@@ -43,6 +43,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
+        :root { --nav-offset: 112px; }
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -55,6 +56,10 @@
             background-position: center;
             background-attachment: fixed;
         }
+        /* Mobile browsers often struggle with fixed background attachments */
+        @media (max-width: 768px) {
+            .hero-bg { background-attachment: scroll; }
+        }
         .animate-pulse-slow {
             animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -66,7 +71,7 @@
         }
     
         /* CashKey polish pack: typography + buttons + hover */
-        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        body { line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; padding-top: var(--nav-offset); }
         h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
         h4, h5, h6 { line-height: 1.2; }
         p { line-height: 1.65; }
@@ -105,7 +110,7 @@
 </head>
 <body class="bg-white text-charcoal">
 <!-- Navigation -->
-<nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+<nav id="site-nav" class="fixed top-0 w-full bg-white shadow-lg z-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center py-4">
 <!-- Logo -->
@@ -143,7 +148,7 @@
 </div>
 </nav>
 
-<main class="pt-24 pb-16 bg-cream">
+<main class="pt-12 pb-16 bg-cream">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-xl shadow-lg p-8">
       <h1 class="text-4xl font-display font-bold text-forest mb-2">Privacy Policy</h1>
