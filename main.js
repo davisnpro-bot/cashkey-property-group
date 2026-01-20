@@ -252,23 +252,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // NOTE: We keep this intentionally conservative to avoid over-promising.
             // If you want market-specific accuracy later, we can add a simple zip/city multiplier.
-            const basePricePerSqft = 120; // conservative baseline
-            const bedAdjustment = 4000;
-            const bathAdjustment = 3500;
+            const basePricePerSqft = 95; // conservative baseline
+            const bedAdjustment = 2500;
+            const bathAdjustment = 2000;
 
             let marketEstimate = (sqft * basePricePerSqft) + (bedrooms * bedAdjustment) + (bathrooms * bathAdjustment);
 
             // Condition factor (1=poor ... 5=excellent)
-            const conditionFactor = [0.65, 0.75, 0.85, 0.92, 0.98][Math.max(1, Math.min(5, condition)) - 1];
+            const conditionFactor = [0.60, 0.70, 0.80, 0.88, 0.94][Math.max(1, Math.min(5, condition)) - 1];
             marketEstimate *= conditionFactor;
 
             // Cash offer factor (discount for speed & repairs)
-            const cashFactor = [0.60, 0.62, 0.65, 0.67, 0.69][Math.max(1, Math.min(5, condition)) - 1];
+            const cashFactor = [0.55, 0.58, 0.60, 0.62, 0.65][Math.max(1, Math.min(5, condition)) - 1];
             const cashOffer = marketEstimate * cashFactor;
 
             // Display a small range to reflect market variability
-            const offerLow = Math.max(0, Math.round(cashOffer * 0.97));
-            const offerHigh = Math.max(0, Math.round(cashOffer * 1.03));
+            const offerLow = Math.max(0, Math.round(cashOffer * 0.95));
+            const offerHigh = Math.max(0, Math.round(cashOffer * 1.01));
 
             if (resultDisplay) {
                 resultDisplay.innerHTML = `
