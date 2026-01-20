@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // NOTE: We keep this intentionally conservative to avoid over-promising.
             // If you want market-specific accuracy later, we can add a simple zip/city multiplier.
-            const basePricePerSqft = 125; // conservative baseline
+            const basePricePerSqft = 120; // conservative baseline
             const bedAdjustment = 4000;
             const bathAdjustment = 3500;
 
